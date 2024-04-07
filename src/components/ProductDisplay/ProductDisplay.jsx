@@ -2,13 +2,15 @@ import React from 'react'
 import './ProductDisplay.css'
 import star_icon from "../Assets/star_icon.png"
 import start_dull_icon from "../Assets/star_dull_icon.png"
+import { useContext } from 'react'
+import { ShopContext } from '../../Context/ShopContext'
 const ProductDisplay = (props) => {
     const {product} = props;
+    const {addToCart} = useContext(ShopContext);
   return (
     <div className='productdisplay'>
       <div className="producdisplay-left">
         <div className="productdisplay-img-list">
-            <img src={product.image} alt="" />
             <img src={product.image} alt="" />
             <img src={product.image} alt="" />
             <img src={product.image} alt="" />
@@ -33,18 +35,21 @@ const ProductDisplay = (props) => {
             <div className="productdisplay-price-new">${product.new_price}</div>
         </div>
         <div className="productdisplay-right-description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae obcaecati saepe dignissimos facere vero voluptate voluptas odit tenetur et! Explicabo dolore quam facere eum praesentium, 
-            autem quidem quasi aut reiciendis.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.  
+             
         </div>
         <div className="productdisplay-right-size">
             <h1>Select Size</h1>
-            <div className='productdisplay-right-size'>
+            <div className='productdisplay-right-sizes'>
                 <div>S</div>
                 <div>M</div>
                 <div>L</div>
                 <div>XL</div>
                 <div>XXI</div>
             </div>
+            <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+            <div className="productcategory-right-category"><span>Category:</span>Women, T-Shirt, Crop Top</div>
+            <div className="productcategory-right-category"><span>Tags:</span>Modern, Lastest, Crop Top</div>
         </div>
 
       </div>

@@ -53,6 +53,7 @@
 .loginsignup-login span{
     color: red;
     font-weight: 800;
+    cursor: pointer;
 }
 .loginsignup-agree{
     display: flex;

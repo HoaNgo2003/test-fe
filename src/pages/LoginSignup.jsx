@@ -10,7 +10,7 @@ export default function LoginSignup() {
   })
   const signup = async (req, res)=>{
     let response;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://test-be-8631.onrender.com/signup',{
       method: "POST",
       headers:{
         Accept: "application/json",
@@ -32,7 +32,7 @@ export default function LoginSignup() {
   }
   const login = async (req, res)=>{
     let response;
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://test-be-8631.onrender.com/login',{
       method:"POST",
       headers:{
         Accept: "application/json",

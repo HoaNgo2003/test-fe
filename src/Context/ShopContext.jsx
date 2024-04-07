@@ -10,7 +10,7 @@ const getDefaultCart = ()=>{
 const ShopContextProvider = (props)=>{
     const [all_product, setAll_product] = useState([]);
     useEffect( ()=>{
-        fetch('http://localhost:4000/allproduct')
+        fetch('https://test-be-8631.onrender.com/allproduct')
         .then((res)=>res.json())
         .then((data)=>{
             setAll_product(data)
@@ -38,7 +38,7 @@ const ShopContextProvider = (props)=>{
     const addToCart = (itemId)=>{
         setCartItem((prev)=>({...prev, [itemId]:prev[itemId]+1}))
         if(localStorage.getItem("auth-token")){
-            fetch('http://localhost:4000/addtocart',{
+            fetch('https://test-be-8631.onrender.com//addtocart',{
                 method: "POST",
                 headers:{
                     Accept: 'application/json',
